@@ -1,0 +1,74 @@
+#!/bin/sh
+
+
+# Funtions
+path_shorting() {
+	IFS='/'
+
+	untruncate_path=$(
+		printf '%s' "$1" \
+		| sed -e "s/^$(
+			printf '%s' "$HOME" \
+			| sed -e 's/\//\\\//g'
+		)/$HOME_SYMBOL/"
+	)
+
+	[ "$TRUNCATION_LENGTH" -gt '0' ] && {
+		for directory_raw in $untruncate_path; do
+			directory_count=$(( directory_count + 1 ))
+		done
+
+		truncate_count=$(( directory_count - TRUNCATION_LENGTH ))
+
+		[ "$truncate_count" -gt 0 ] && truncation_symbol="$TRUNCATION_SYMBOL"
+	}
+
+	for directory_raw in $untruncate_path; do
+		if [ "$TRUNCATION_LENGTH" -gt '0' ] && [ "$truncate_count" -gt '0' ]; then
+			[ "$SHORT_LENGTH" -gt '0' ] && truncated_path="${truncated_path:+$truncated_path/}$(printf '%s' "$directory_raw" | cut -c "-$SHORT_LENGTH")"
+		else
+			truncated_path="${truncated_path:+$truncated_path/}$directory_raw"
+		fi
+
+		truncate_count=$(( truncate_count - 1 ))
+	done
+
+	printf '%s' "$truncation_symbol$truncated_path"
+}
+
+
+# Values
+TRUNCATION_LENGTH="${PATHSHORTER_TRUNCATION_LENGTH:-3}"; printf '%d' "$TRUNCATION_LENGTH" >/dev/null || exit 1
+SHORT_LENGTH="${PATHSHORTER_SHORT_LENGTH:-0}"          ; printf '%d' "$SHORT_LENGTH"      >/dev/null || exit 1
+TRUNCATION_SYMBOL="${PATHSHORTER_TRUNCATION_SYMBOL-…/}"
+HOME_SYMBOL=$(
+	printf '%s' "${PATHSHORTER_HOME_SYMBOL-~}" \
+	| sed -e '
+		s/\\/\\\\/g
+		s/\&/\\\&/g
+		s/\//\\\//g
+	'
+)
+
+if [ -n "$*" ]; then
+	for raw_path in "$@"; do
+		PROMPT_PATHS="${PROMPT_PATHS:+$PROMPT_PATHS\n}$(path_shorting "$raw_path")"
+	done
+elif [ -p '/dev/stdin' ]; then
+	IFS_REAL="$IFS"
+	IFS='
+	'
+	for raw_path in $(cat -); do
+		PROMPT_PATHS="${PROMPT_PATHS:+$PROMPT_PATHS\n}$(path_shorting "$raw_path")"
+	done
+	IFS="$IFS_REAL"
+else
+	PROMPT_PATHS=$(path_shorting "$PWD")
+fi
+
+
+# Start
+printf "$PROMPT_PATHS"
+
+
+exit 0
