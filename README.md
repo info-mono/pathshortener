@@ -1,10 +1,10 @@
 <h1 align="center"><code>pathshortener</code></h1>
-<p align="center">Path shortener</p>
+<p align="center">File system's path shortener</p>
 <p align="center"><a href="https://github.com/NNBnh/pathshortener/blob/main/LICENSE"><img src="https://img.shields.io/github/license/NNBnh/pathshortener?labelColor=073551&color=4EAA25&style=for-the-badge" alt="License: GPL-3.0"></a> <img src="https://img.shields.io/badge/development-completed-%234EAA25.svg?labelColor=073551&style=for-the-badge&logoColor=FFFFFF" alt="Development completed"></p>
 <p align="center"><a href="https://github.com/NNBnh/pathshortener/watchers"><img src="https://img.shields.io/github/watchers/NNBnh/pathshortener?labelColor=073551&color=4EAA25&style=flat-square"></a> <a href="https://github.com/NNBnh/pathshortener/stargazers"><img src="https://img.shields.io/github/stars/NNBnh/pathshortener?labelColor=073551&color=4EAA25&style=flat-square"></a> <a href="https://github.com/NNBnh/pathshortener/network/members"><img src="https://img.shields.io/github/forks/NNBnh/pathshortener?labelColor=073551&color=4EAA25&style=flat-square"></a> <a href="https://github.com/NNBnh/pathshortener/issues"><img src="https://img.shields.io/github/issues/NNBnh/pathshortener?labelColor=073551&color=4EAA25&style=flat-square"></a></p>
 
 ## 💡 About
-`pathshortener` is a path shortener written in [`portable sh`](https://github.com/dylanaraps/pure-sh-bible) inspired by [Fish's `prompt_pwd` command](https://fishshell.com/docs/current/cmds/prompt_pwd.html) and [Starship's Directory module](https://starship.rs/config/#directory).
+`pathshortener` is a file system's path shortener written in [`portable sh`](https://github.com/dylanaraps/pure-sh-bible) inspired by [Fish's `prompt_pwd` command](https://fishshell.com/docs/current/cmds/prompt_pwd.html) and [Starship's Directory module](https://starship.rs/config/#directory).
 
 ## 🚀 Setup
 ### 🧾 Dependencies
