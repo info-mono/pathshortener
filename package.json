@@ -1,6 +1,6 @@
 {
   "name": "pathshortener",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "File system's path shortener",
   "global": "true",
   "install": "make install"

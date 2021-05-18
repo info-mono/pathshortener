@@ -10,7 +10,7 @@
 # Description:  File system's path shortener
 # Author:       NNB
 #               └─ https://github.com/NNBnh
-# URL:          https://github.com/NNBnh/pathshortener
+# URL:          https://github.com/info-mono/pathshortener
 # License:      GPLv3
 
 #    This program is free software: you can redistribute it and/or modify
@@ -31,13 +31,7 @@
 path_shorting() {
 	IFS='/'
 
-	untruncate_path=$(
-		printf '%s' "$1" \
-		| sed -e "s/^$(
-			printf '%s' "$HOME" \
-			| sed -e 's/\//\\\//g'
-		)/$HOME_SYMBOL/"
-	)
+	untruncate_path="$HOME_SYMBOL${1#$HOME}"
 
 	[ "$TRUNCATION_LENGTH" -gt '0' ] && {
 		for directory_raw in $untruncate_path; do
@@ -46,7 +40,7 @@ path_shorting() {
 
 		truncate_count=$(( directory_count - TRUNCATION_LENGTH ))
 
-		[ "$truncate_count" -gt 0 ] && truncation_symbol="$TRUNCATION_SYMBOL"
+		[ "$SHORT_LENGTH" = 0 ] && [ "$truncate_count" -gt 0 ] && truncation_symbol="$TRUNCATION_SYMBOL"
 	}
 
 	for directory_raw in $untruncate_path; do
@@ -67,14 +61,7 @@ path_shorting() {
 TRUNCATION_LENGTH="${PATHSHORTER_TRUNCATION_LENGTH:-3}"; printf '%d' "$TRUNCATION_LENGTH" >/dev/null || exit 1
 SHORT_LENGTH="${PATHSHORTER_SHORT_LENGTH:-0}"          ; printf '%d' "$SHORT_LENGTH"      >/dev/null || exit 1
 TRUNCATION_SYMBOL="${PATHSHORTER_TRUNCATION_SYMBOL-…/}"
-HOME_SYMBOL=$(
-	printf '%s' "${PATHSHORTER_HOME_SYMBOL-~}" \
-	| sed -e '
-		s/\\/\\\\/g
-		s/\&/\\\&/g
-		s/\//\\\//g
-	'
-)
+HOME_SYMBOL="${PATHSHORTER_HOME_SYMBOL-~}"
 
 if [ -n "$*" ]; then
 	for raw_path in "$@"; do
