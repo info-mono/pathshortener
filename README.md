@@ -1,4 +1,4 @@
-<h1 align="center"><code>…/path/shortener</code></h1>
+<h1 align="center"><code>…/P/A/T/H/shortener</code></h1>
 <p align="center">File system's path shortener</p>
 <p align="center"><a href="https://github.com/info-mono/pathshortener/blob/main/LICENSE"><img src="https://img.shields.io/github/license/info-mono/pathshortener?labelColor=383838&color=585858&style=for-the-badge" alt="License: GPL-3.0"></a> <img src="https://img.shields.io/badge/development-completed-%23585858.svg?labelColor=383838&style=for-the-badge&logoColor=FFFFFF" alt="Development completed"></p>
 <p align="center"><a href="https://github.com/info-mono/pathshortener/watchers"><img src="https://img.shields.io/github/watchers/info-mono/pathshortener?labelColor=383838&color=585858&style=flat-square"></a> <a href="https://github.com/info-mono/pathshortener/stargazers"><img src="https://img.shields.io/github/stars/info-mono/pathshortener?labelColor=383838&color=585858&style=flat-square"></a> <a href="https://github.com/info-mono/pathshortener/network/members"><img src="https://img.shields.io/github/forks/info-mono/pathshortener?labelColor=383838&color=585858&style=flat-square"></a> <a href="https://github.com/info-mono/pathshortener/issues"><img src="https://img.shields.io/github/issues/info-mono/pathshortener?labelColor=383838&color=585858&style=flat-square"></a></p>
@@ -47,6 +47,16 @@ Run 'pathshortener' in the terminal:
 ```sh
 pathshortener PATHS
 ```
+
+## ⚙️ Configuration
+Pathshortener is configured through environment variables: `export PATHSHORTENER_<SETTING>="<value>"`
+
+|Value                            |Valid      |Default|Description                                                                   |
+|---------------------------------|-----------|-------|------------------------------------------------------------------------------|
+|`PATHSHORTENER_TRUNCATION_LENGTH`|`<integer>`|`3`    |The number of parent folders that the current directory should be truncated to|
+|`PATHSHORTENER_SHORT_LENGTH`     |`<integer>`|`0`    |The number of characters to display in truncated paths                        |
+|`PATHSHORTENER_TRUNCATION_SYMBOL`|`<string>` |`…/`   |The symbol to prefix to truncated paths                                       |
+|`PATHSHORTENER_HOME_SYMBOL`      |`<string>` |`~`    |The symbol indicating home directory                                          |
 
 ## 💌 Credits
 Special thanks to:

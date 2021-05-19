@@ -58,10 +58,10 @@ path_shorting() {
 
 
 # Values
-TRUNCATION_LENGTH="${PATHSHORTER_TRUNCATION_LENGTH:-3}"; printf '%d' "$TRUNCATION_LENGTH" >/dev/null || exit 1
-SHORT_LENGTH="${PATHSHORTER_SHORT_LENGTH:-0}"          ; printf '%d' "$SHORT_LENGTH"      >/dev/null || exit 1
-TRUNCATION_SYMBOL="${PATHSHORTER_TRUNCATION_SYMBOL-…/}"
-HOME_SYMBOL="${PATHSHORTER_HOME_SYMBOL-~}"
+TRUNCATION_LENGTH="${PATHSHORTENER_TRUNCATION_LENGTH:-3}"; printf '%d' "$TRUNCATION_LENGTH" >/dev/null || exit 1
+SHORT_LENGTH="${PATHSHORTENER_SHORT_LENGTH:-0}"          ; printf '%d' "$SHORT_LENGTH"      >/dev/null || exit 1
+TRUNCATION_SYMBOL="${PATHSHORTENER_TRUNCATION_SYMBOL-…/}"
+HOME_SYMBOL="${PATHSHORTENER_HOME_SYMBOL-~}"
 
 if [ -n "$*" ]; then
 	for raw_path in "$@"; do
