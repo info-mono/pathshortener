@@ -51,12 +51,12 @@ pathshortener PATHS
 ## ⚙️ Configuration
 Pathshortener is configured through environment variables: `export PATHSHORTENER_<SETTING>="<value>"`
 
-|Value                            |Valid      |Default|Description                                                                   |
-|---------------------------------|-----------|-------|------------------------------------------------------------------------------|
-|`PATHSHORTENER_TRUNCATION_LENGTH`|`<integer>`|`3`    |The number of parent folders that the current directory should be truncated to|
-|`PATHSHORTENER_SHORT_LENGTH`     |`<integer>`|`0`    |The number of characters to display in truncated paths                        |
-|`PATHSHORTENER_TRUNCATION_SYMBOL`|`<string>` |`…/`   |The symbol to prefix to truncated paths                                       |
-|`PATHSHORTENER_HOME_SYMBOL`      |`<string>` |`~`    |The symbol indicating home directory                                          |
+|Value                            |Valid      |Default|Description                                                                                           |
+|---------------------------------|-----------|-------|------------------------------------------------------------------------------------------------------|
+|`PATHSHORTENER_TRUNCATION_LENGTH`|`<integer>`|`3`    |The number of parent folders that the current directory should be truncated to (set to `0` to disable)|
+|`PATHSHORTENER_SHORT_LENGTH`     |`<integer>`|`0`    |The number of characters to display in truncated paths                                                |
+|`PATHSHORTENER_TRUNCATION_SYMBOL`|`<string>` |`…/`   |The symbol to prefix to truncated paths                                                               |
+|`PATHSHORTENER_HOME_SYMBOL`      |`<string>` |`~`    |The symbol indicating home directory                                                                  |
 
 ## 💌 Credits
 Special thanks to:
