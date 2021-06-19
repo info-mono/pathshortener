@@ -1,6 +1,6 @@
 <h1 align="center"><code>…/P/A/T/H/shortener</code></h1>
 <p align="center">File system's path shortener</p>
-<p align="center"><a href="https://github.com/info-mono/pathshortener/blob/main/LICENSE"><img src="https://img.shields.io/github/license/info-mono/pathshortener?labelColor=383838&color=585858&style=for-the-badge" alt="License: GPL-3.0"></a> <img src="https://img.shields.io/badge/development-completed-%23585858.svg?labelColor=383838&style=for-the-badge&logoColor=FFFFFF" alt="Development completed"></p>
+<p align="center"><a href="https://github.com/info-mono/pathshortener/blob/main/LICENSE"><img src="https://img.shields.io/github/license/info-mono/pathshortener?labelColor=383838&color=585858&style=for-the-badge" alt="License: GPL-3.0"></a> <a href="https://gist.github.com/NNBnh/9ef453aba3efce26046e0d3119dab5a7#development-completed"><img src="https://img.shields.io/badge/development-completed-%23585858.svg?labelColor=383838&style=for-the-badge&logoColor=FFFFFF" alt="Development completed"></a></p>
 <p align="center"><a href="https://github.com/info-mono/pathshortener/watchers"><img src="https://img.shields.io/github/watchers/info-mono/pathshortener?labelColor=383838&color=585858&style=flat-square"></a> <a href="https://github.com/info-mono/pathshortener/stargazers"><img src="https://img.shields.io/github/stars/info-mono/pathshortener?labelColor=383838&color=585858&style=flat-square"></a> <a href="https://github.com/info-mono/pathshortener/network/members"><img src="https://img.shields.io/github/forks/info-mono/pathshortener?labelColor=383838&color=585858&style=flat-square"></a> <a href="https://github.com/info-mono/pathshortener/issues"><img src="https://img.shields.io/github/issues/info-mono/pathshortener?labelColor=383838&color=585858&style=flat-square"></a></p>
 
 ## 💡 About
@@ -8,19 +8,17 @@
 
 ## 🚀 Setup
 ### 🧾 Dependencies
-- `sh` to process
+- [Unix commands](https://en.wikipedia.org/wiki/List_of_Unix_commands) to process
 
 ### 📥 Installation
 #### 🔧 Manually
-- Option 1: using `curl`
-
+Option 1: using `curl`
 ```sh
 curl https://raw.githubusercontent.com/info-mono/pathshortener/main/bin/pathshortener > ~/.local/bin/pathshortener
 chmod +x ~/.local/bin/pathshortener
 ```
 
-- Option 2: using `git`
-
+Option 2: using `git`
 ```sh
 git clone https://github.com/info-mono/pathshortener.git ~/.local/share/pathshortener
 ln -s ~/.local/share/pathshortener/bin/pathshortener ~/.local/bin/pathshortener
@@ -28,13 +26,11 @@ ln -s ~/.local/share/pathshortener/bin/pathshortener ~/.local/bin/pathshortener
 
 #### 📦 Package manager
 For [`bpkg`](https://github.com/bpkg/bpkg) user:
-
 ```sh
 bpkg install info-mono/pathshortener
 ```
 
 For [Basher](https://github.com/bpkg/bpkg) user:
-
 ```sh
 basher install info-mono/pathshortener
 ```
@@ -43,14 +39,12 @@ basher install info-mono/pathshortener
 
 ## ⌨️ Usage
 Run 'pathshortener' in the terminal:
-
 ```sh
 pathshortener PATHS
 ```
 
 ## ⚙️ Configuration
 Pathshortener is configured through environment variables: `export PATHSHORTENER_<SETTING>="<value>"`
-
 |Value                            |Valid      |Default|Description                                                                                           |
 |---------------------------------|-----------|-------|------------------------------------------------------------------------------------------------------|
 |`PATHSHORTENER_TRUNCATION_LENGTH`|`<integer>`|`3`    |The number of parent folders that the current directory should be truncated to (set to `0` to disable)|
