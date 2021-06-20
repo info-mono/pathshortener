@@ -55,7 +55,7 @@ Pathshortener is configured through environment variables: `export PATHSHORTENER
 ## 💌 Credits
 Special thanks to:
 - [**Fish**](https://fishshell.com/docs/current/cmds/fish_status_to_signal.html) by [it's contributors](https://github.com/fish-shell/fish-shell/graphs/contributors)
-- [**Starship**](https://starship.rs/) by [it's contributors](https://github.com/starship/starship/graphs/contributors)
+- [**Starship**](https://starship.rs) by [it's contributors](https://github.com/starship/starship/graphs/contributors)
 
 <br><br><br><br>
 
