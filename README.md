@@ -24,12 +24,12 @@ ln -s ~/.local/share/pathshortener/bin/pathshortener ~/.local/bin/pathshortener
 ```
 
 #### 📦 Package manager
-For [`bpkg`](https://github.com/bpkg/bpkg) user:
+For [Bpkg](https://github.com/bpkg/bpkg) user:
 ```sh
 bpkg install info-mono/pathshortener
 ```
 
-For [Basher](https://github.com/bpkg/bpkg) user:
+For [Basher](https://github.com/basherpm/basher) user:
 ```sh
 basher install info-mono/pathshortener
 ```
